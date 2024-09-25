@@ -241,19 +241,19 @@ class MobileNetV3_Large(nn.Module):
 
             # Pass through the first bottleneck
         for i, block in enumerate(self.bneck):
-            if i == 0:
+            if i == 1:
 
                 out = block(out)
                 out1 = self.res1(out)
                 out2 = self.rsam1(out)
                 out = out2 + out1
-            elif i == 2:
+            elif i == 3:
                 out = block(out)
                 out4 = self.res2(out)
                 out5 = self.rsam2(out)
                 out = out5 + out4
 
-            elif i == 5:
+            elif i == 6:
                 out = block(out)
                 out7 = self.res3(out)
                 out8 = self.rsam3(out)
